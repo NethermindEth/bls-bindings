@@ -3,7 +3,7 @@ name: Test
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [test/macos-arm64]
   workflow_dispatch:
     inputs:
       ref:
@@ -115,7 +115,7 @@ jobs:
     needs: [build-linux, build-macos, build-windows]
     env:
       BUILD_CONFIG: Release
-    runs-on: macos-14-arm64
+    runs-on: macos-latest-xlarge
     steps:
       - name: Check out blst-bindings repository
         uses: actions/checkout@v4
