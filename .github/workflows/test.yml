@@ -87,11 +87,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: supranational/blst
-          ref: ${{ github.event.inputs.ref }}
+          ref: v0.3.12
           path: blst
 
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v2
+      - name: Set up PATH
+        uses: ilammy/msvc-dev-cmd@v1
 
       - name: Build
         working-directory: blst
