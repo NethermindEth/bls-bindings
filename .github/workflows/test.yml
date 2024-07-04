@@ -90,8 +90,8 @@ jobs:
           ref: ${{ github.event.inputs.ref }}
           path: blst
 
-      # - name: Set up PATH
-      #   uses: ilammy/msvc-dev-cmd@v1
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
 
       - name: Build
         working-directory: blst
